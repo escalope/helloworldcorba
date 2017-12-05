@@ -6,6 +6,7 @@ import org.omg.CosNaming.NamingContextPackage.*;
 import org.omg.CORBA.*;
 import org.omg.PortableServer.*;
 import org.omg.PortableServer.POA;
+import java.io.*;
 
 import java.util.Properties;
 
@@ -59,6 +60,12 @@ public class HelloServer {
       String name = "Hello";
       NameComponent path[] = ncRef.to_name( name );
       ncRef.rebind(path, href);
+
+	try{
+      FileOutputStream fos=new FileOutputStream("iorfile");
+      fos.write (ncRef.toString().getBytes());
+	fos.close();
+	} catch (Exception ex){ex.printStackTrace();}
 
       System.out.println("HelloServer ready and waiting ...");
 
