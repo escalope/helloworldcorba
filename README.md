@@ -12,14 +12,14 @@ Pasos para acceder de java a java y de python a java
 7. java HelloClient quit -ORBInitialPort 1050 -ORBInitialHost 127.0.0.1 #apagar el servidor
 ```
 
-Para el cliente python una vez arrancado el servidor:
+Para el cliente python (el servidor ya está compilado):
 ```
 1. omniidl -bpython Hello.idl # genera el stub para python. Sólo usaremos el cliente
 2. java HelloServer -ORBInitialPort 1050 -ORBInitialHost 127.0.0.1& # lanza el servidor
 3. python HelloClient.py # imprimirá la cadena devuelta por el servidor
 4. python HelloClient.py quit # apagar el servidor
 ```
-Pasos para acceder de python a python y de java a python, una vez ejecutados los pasos
+Pasos para acceder de python a python y de java a python, una vez ejecutados los pasos anteriores
 -----
 ```
 1. omniidl -bpython Hello.idl # genera el stub para python. Usaremos cliente y servidor
