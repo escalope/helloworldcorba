@@ -63,7 +63,7 @@ public class HelloServer {
 
 	try{
       FileOutputStream fos=new FileOutputStream("iorfile");
-      fos.write (ncRef.toString().getBytes());
+      fos.write (href.toString().getBytes());
 	fos.close();
 	} catch (Exception ex){ex.printStackTrace();}
 
